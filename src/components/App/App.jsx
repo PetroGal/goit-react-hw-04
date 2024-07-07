@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import ImageGallery from '../ImageGallery/ImageGallery.jsx';
 import { getPhotos } from '../../images-api.js';
@@ -60,6 +61,7 @@ export default function App() {
 
   return (
     <div>
+      <Toaster />
       <SearchBar onSubmit={handleSubmit} />
       {isLoading && <Loader />}
       {error ? (
